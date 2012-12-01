@@ -1,0 +1,42 @@
+clang_func_decl
+=============
+
+Simple function comment generator
+that you can plug into vim / emacs.
+
+eg : Given a function prototype like below. 
+
+int func(int a, int b) 
+{
+
+Generates the comment block below.  
+
+/* Name   : func
+ * Desc   :
+ * Return : Int
+ * Params :
+ * a :
+ * b :
+ */
+
+==================
+Usage : 
+
+In vim I can do the above by going to the line with the function declaration 
+
+Assuming the cursor was on the function declarationi in the example above,
+the following  incantation ":.,+1 !./func_decl -" 
+will change the function prototype into a comment block.
+
+Make sure the range includes the opening brace of the function definition or the 
+semi-colon if its simply a declaration.
+
+======================
+Building :
+
+Just run make. You make have to change the -L parameter to 
+specify the path to libclang.so if you are on a 64 bit box or not.
+
+Installing clang and clang-devel packages is a prerequisite.
+
+=======================
