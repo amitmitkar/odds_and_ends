@@ -17,7 +17,8 @@ CXChildVisitResult printFuncHeader(CXCursor cursor, CXCursor parent, CXClientDat
 	switch (clang_getCursorKind(cursor)) {
 		case CXCursor_FunctionDecl : 
 			str = clang_getCursorSpelling(cursor);
-			printf("/* Name   : %s\n", clang_getCString(str));
+			printf("/* =============================================================== *\n");
+			printf(" * Name   : %s\n", clang_getCString(str));
 			printf(" * Desc   :\n");
 			temp = clang_getTypeDeclaration(clang_getResultType(clang_getCursorType(cursor)));
 			if (clang_isInvalid(clang_getCursorKind(temp)))
