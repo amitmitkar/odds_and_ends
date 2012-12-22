@@ -27,7 +27,7 @@ CXChildVisitResult printFuncHeader(CXCursor cursor, CXCursor parent, CXClientDat
 				str = clang_getCursorDisplayName(temp);
 			}
 			printf(" * Return : %s\n", clang_getCString(str));
-			printf(" * Params :\n");
+			printf(" * ----------------------[ Params ]------------------------------- \n");
 			clang_visitChildren(cursor, printFuncHeader, NULL);
 			printf(" */\n");
 			ret = CXChildVisit_Continue;
